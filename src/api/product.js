@@ -16,3 +16,12 @@ module.exports.search = function search(term) {
     })
         .then((response) => response.data.foods)
 }
+
+module.exports.info = function info(fdcId) {
+    return axios.get('https://api.nal.usda.gov/fdc/v1/food/' + fdcId, {
+        params: {
+            api_key: "2jCxTzwXnXmVpeloUuqtHphErw8yqMWSED1la9yv"
+        }
+    })
+        .then((response) => response.data)
+}
