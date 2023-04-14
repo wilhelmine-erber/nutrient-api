@@ -1,13 +1,11 @@
 "use strict"
-/*
-const productApi = require('./api/product')
-const search = productApi.search
-const info = productApi.info
-*/
 
-const { search, info } = require('./api/product')
+require("../scss/index.scss")
 
-search('Apple').then((res) => console.log(res))
+const {search, info} = require("./api/product")
 
-info(1750339).then((p) => console.log(p))
+const testTemplate = require("./templates/test.ejs")
+console.log(testTemplate({name: "TEST!"}))
 
+search("Apple").then((res) => console.log(res))
+// info(171689).then((res) => console.log(res))
